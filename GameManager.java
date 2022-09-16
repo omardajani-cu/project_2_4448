@@ -26,13 +26,13 @@ public class GameManager {
             }
         }
 
+        // setting up connect rooms
         int currentLevel = 1;
         int startingRoom = 1;
 
-        // setting up connect rooms
-        while (currentLevel < levels) {
-            for (int workingRoom = startingRoom; workingRoom < (startingRoom + roomsPerLevel + 1); workingRoom++) {
-                for (int roomToAdd = startingRoom; roomToAdd < (startingRoom + roomsPerLevel + 1); roomToAdd++) {
+        while (currentLevel <= levels) {
+            for (int workingRoom = startingRoom; workingRoom <= (startingRoom + 8); workingRoom++) {
+                for (int roomToAdd = startingRoom; roomToAdd <= (startingRoom + 8); roomToAdd++) {
                     if (workingRoom != roomToAdd) {
                         rooms.get(workingRoom).AddConnectedRoom(rooms.get(roomToAdd));
                     }
