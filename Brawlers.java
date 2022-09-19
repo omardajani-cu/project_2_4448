@@ -1,4 +1,4 @@
-package myprojects;
+package com.project2;
 
 public class Brawlers extends Adventurers {
     String name = "Brawler";

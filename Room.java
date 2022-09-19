@@ -1,10 +1,13 @@
+package com.project2;
 import java.util.ArrayList;
+
+
 public class Room {
     public String roomName;
-    private int level;
-    private boolean isCenterRoom;
-    private ArrayList<Creature> creaturesInRoom = new ArrayList<Creature>();
-    private ArrayList<Adventurer> adventurersInRoom = new ArrayList<Adventurer>();
+    public int level;
+    public boolean isCenterRoom;
+    private ArrayList<Creatures> creaturesInRoom = new ArrayList<Creatures>();
+    private ArrayList<Adventurers> adventurersInRoom = new ArrayList<Adventurers>();
     private ArrayList<Room> connectedRooms = new ArrayList<Room>();
 
     public Room(String roomName, boolean isCenterRoom, int level) {
@@ -13,27 +16,27 @@ public class Room {
         this.level = level;
     }
 
-    public void AddCreature(Creature newCreature) {
+    public void AddCreature(Creatures newCreature) {
         creaturesInRoom.add(newCreature);
     }
 
-    public void RemoveCreature(Creature newCreature) {
+    public void RemoveCreature(Creatures newCreature) {
 
     }
 
-    public ArrayList<Creature> GetCreaturesInRoom() {
+    public ArrayList<Creatures> GetCreaturesInRoom() {
         return creaturesInRoom;
     }
 
-    public void AddAdventurer(Adventurer newAdventurer) {
+    public void AddAdventurer(Adventurers newAdventurer) {
         adventurersInRoom.add(newAdventurer);
     }
 
-    public void RemoveAdventurer(Adventurer newAdventurer) {
+    public void RemoveAdventurer(Adventurers newAdventurer) {
 
     }
 
-    public ArrayList<Adventurer> GetAdventurersInRoom() {
+    public ArrayList<Adventurers> GetAdventurersInRoom() {
         return adventurersInRoom;
     }
 

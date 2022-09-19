@@ -1,3 +1,5 @@
+package com.project2;
+
 import java.util.ArrayList;
 
 public class GameManager {

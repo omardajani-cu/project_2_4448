@@ -1,4 +1,5 @@
-package myprojects;
+package com.project2;
+
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -9,7 +10,7 @@ public class Adventurers {
 
     String name = "Adventurer";
     Random rand = new Random();
-    Room currentRoom = new Room("0-0-1", true, 0, false);
+    Room currentRoom = new Room("0-0-1", true, 0);
     public int points =0;
     public int lives = 3;
     public int hasTreasure = 0;
@@ -20,7 +21,6 @@ public class Adventurers {
         this.currentRoom.roomName = room.roomName;
         this.currentRoom.isCenterRoom = room.isCenterRoom;
         this.currentRoom.level = room.level;
-        this.currentRoom.isTreasure = room.isTreasure;
     }
 
     //print out the player's room
@@ -33,7 +33,7 @@ public class Adventurers {
         return this.name;
     }
 
-        //simulates a dice roll
+    //simulates a dice roll
     public int Fight(){
         int diceRoll = rand.nextInt(7);
         System.out.println("Dice Roll Number: ");
