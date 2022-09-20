@@ -1,43 +1,79 @@
 package com.project2;
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class Room {
-    public String roomName;
-    public int level;
-    public boolean isCenterRoom;
-    private ArrayList<Creatures> creaturesInRoom = new ArrayList<Creatures>();
-    private ArrayList<Adventurers> adventurersInRoom = new ArrayList<Adventurers>();
-    private ArrayList<Room> connectedRooms = new ArrayList<Room>();
 
-    public Room(String roomName, boolean isCenterRoom, int level) {
-        this.roomName = roomName;
+    private String name;
+    private int level;
+    private boolean isCenterRoom;
+
+    private List<Creature> creaturesInRoom = new ArrayList<>();
+    private List<Adventurer> adventurersInRoom = new ArrayList<>();
+    private ArrayList<Room> connectedRooms = new ArrayList<>();
+
+    public Room(String name, boolean isCenterRoom, int level) {
+        this.name = name;
         this.isCenterRoom = isCenterRoom;
         this.level = level;
     }
 
-    public void AddCreature(Creatures newCreature) {
-        creaturesInRoom.add(newCreature);
+    public String getName(){
+        return name;
     }
 
-    public void RemoveCreature(Creatures newCreature) {
-
+    public void setName(String name){
+        this.name = name;
     }
 
-    public ArrayList<Creatures> GetCreaturesInRoom() {
+    public int getLevel(){
+        return level;
+    }
+
+    public void setLevel(int level){
+        this.level = level;
+    }
+
+    public boolean isCenterRoom(){
+        return isCenterRoom;
+    }
+
+    public void setCenterRoom(boolean centerRoom){
+        isCenterRoom = centerRoom;
+    }
+
+    public List<Creature> getCreaturesInRoom(){
         return creaturesInRoom;
     }
 
-    public void AddAdventurer(Adventurers newAdventurer) {
+    public void setCreaturesInRoom(List<Creature> creaturesInRoom){
+        this.creaturesInRoom = creaturesInRoom;
+    }
+
+    public List<Adventurer> getAdventurersInRoom(){
+        return adventurersInRoom;
+    }
+
+    public void setAdventurersInRoom(List<Adventurer> adventurersInRoom){
+        this.adventurersInRoom = adventurersInRoom;
+    }
+
+    public void addCreature(Creature newCreature) {
+        creaturesInRoom.add(newCreature);
+    }
+
+    public void RemoveCreature(Creature newCreature) {
+        creaturesInRoom.remove(newCreature);
+    }
+
+
+    public void addAdventurer(Adventurer newAdventurer) {
         adventurersInRoom.add(newAdventurer);
     }
 
-    public void RemoveAdventurer(Adventurers newAdventurer) {
-
-    }
-
-    public ArrayList<Adventurers> GetAdventurersInRoom() {
-        return adventurersInRoom;
+    public void RemoveAdventurer(Adventurer newAdventurer) {
+        adventurersInRoom.remove(newAdventurer);
     }
 
     public void AddConnectedRoom(Room room) {
@@ -49,9 +85,9 @@ public class Room {
     }
 
     public void PrintNeighboringRooms() {
-        System.out.println("Neighbors for " + roomName + ": ");
+        System.out.println("Neighbors for " + name + ": ");
         for (int i = 0; i < connectedRooms.size(); i++) {
-            System.out.print(connectedRooms.get(i).roomName + " ");
+            System.out.print(connectedRooms.get(i).name + " ");
         }
         System.out.println("\n");
     }
